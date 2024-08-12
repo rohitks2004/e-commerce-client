@@ -1,0 +1,26 @@
+slices are used in redux 
+  slices are created using the method :- createSlice -takes an object with 3 properties
+   3 properties -
+   1. name
+   2. initial state
+   3. reducer ( this is exported as default)
+
+redux is used to avoid passing states as props so we create a store that has all the global states
+ redux stores are created using method :- configureStore -takes object with reducer property which has an object with all the slices with its name as key
+ store is exported as default
+
+provide the store in main.jsx using  <Provider store ={store}> <App /> </Provider>
+
+
+useSelector( state => state.reducer.initialname)
+useDispatch(action())
+
+name
+initialstate  ==> createSlice ==>   reducer
+reducers                            actions
+
+
+inside  store-> reducer ==> state
+                    ^          |
+                    |         `'
+outside store-> action <===   ui
