@@ -4,9 +4,12 @@ import { PRODUCTS } from "../constants";
 const productSlice =  createSlice({
     name:'productSlice',
     initialState:{
-        products : PRODUCTS
+        products : []
     },
     reducers:{
+        setProducts : (state,action) =>{
+            state.products = action.payload;
+        },
         search:(state,action)=>{
             if(action.payload){
                 state.products = PRODUCTS.filter((product)=>product.title.toLowerCase().includes(action.payload))
@@ -19,5 +22,5 @@ const productSlice =  createSlice({
     
 })
 
-export const {search} = productSlice.actions;
+export const {setProducts ,search} = productSlice.actions;
 export default productSlice.reducer;
